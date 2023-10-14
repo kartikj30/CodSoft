@@ -1,0 +1,36 @@
+import java.util.Scanner;
+import java.util.Random;
+public class NumberGame
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int min=1,max=100,cmax=7;
+        Random rand=new Random();
+        int gen = rand.nextInt((max-min)+1+min);
+        System.out.println("Welcome to the Number Guessing Game! /n Try to guess a number between 1 and 100.");
+
+        while(true) {
+            int count=0;
+            while(count<=cmax){
+
+                System.out.println("Enter your guess:");
+                int guess=in.nextInt();
+                count++;
+
+                if (guess==gen) {
+                    System.out.println("The guess is correct! YOU WON!");
+                    System.out.println("Number of attempts taken: " + count);
+                    System.out.println("Thanks for playing!");
+                    break;
+                }
+                else if (guess>gen) {
+                System.out.println("The guess is too high! Try again");
+                }
+                 else {
+                    System.out.println("The guess is too low! Try again");
+                }
+            }
+        }
+    }
+}
